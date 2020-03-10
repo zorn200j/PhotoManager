@@ -8,10 +8,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
-import { NewFolderDialogComponent } from '../modals/newFolderDialog.component';
+import { NewFolderDialogComponent } from './newFolderDialog.component';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { RenameDialogComponent } from '../modals/renameDialog.component';
+import { RenameDialogComponent } from './renameDialog.component';
 import { FileManageComponent } from './file-manage.component';
 
 @NgModule({

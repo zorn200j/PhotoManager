@@ -20,6 +20,7 @@ import { MatCardModule } from '@angular/material/card';
 import { environment } from '../environments/environment';
 import { FileService } from './_services/file.service';
 import { FileManageModule } from './file-manage/file-manage.module';
+import { UploadModule } from './upload/upload.module';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FileManageModule } from './file-manage/file-manage.module';
         BrowserModule,
         FileManageModule,
         FlexLayoutModule, 
-        MatCardModule
+        MatCardModule,
+        UploadModule
     ],
     declarations: [
         AppComponent,

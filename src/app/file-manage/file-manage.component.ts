@@ -1,8 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FileElement } from '../_models/element';
 import { MatDialog } from '@angular/material/dialog';
-import { NewFolderDialogComponent } from '../modals/newFolderDialog.component';
-import { RenameDialogComponent } from '../modals/renameDialog.component';
+import { NewFolderDialogComponent } from './newFolderDialog.component';
+import { RenameDialogComponent } from './renameDialog.component';
 import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
 import { Observable } from 'rxjs';
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, PatternValidator } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AlertService } from '../_services/alert.service';
@@ -31,6 +31,7 @@ export class RegisterComponent implements OnInit {
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
             username: ['', Validators.required],
+            email: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]]
         });
     }
