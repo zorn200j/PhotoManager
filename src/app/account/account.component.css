@@ -1,0 +1,14 @@
+#wrawpper > div {
+    margin-bottom: 3vh;
+}
+#wrawpper > div h3 {
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+}
+#wrawpper > div .mat-form-field {
+    width: 30vw;
+}
+#wrawpper > div:last-child {
+    margin-top: 4vh;
+    margin-bottom: 2vh;
+}

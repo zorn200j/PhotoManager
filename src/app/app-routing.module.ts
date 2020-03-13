@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UploadComponent } from './upload/upload.component';
 import { FileManageComponent } from './file-manage/file-manage.component';
+import { AccountComponent } from './account/account.component';
 //import { AuthGuard } from './_helpers/auth.guard';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'upload', component: UploadComponent },
     { path: 'file-manage', component: FileManageComponent },
+    { path: 'account', component: AccountComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

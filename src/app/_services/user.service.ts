@@ -7,9 +7,6 @@ import { User } from '../_models/user';
 export class UserService {
     constructor(private http: HttpClient) { }
 
-    getAll() {
-        return this.http.get<User[]>(`${config.apiUrl}/users`);
-    }
 
     register(user: User) {
         return this.http.post(`${config.apiUrl}/users/register`, user);

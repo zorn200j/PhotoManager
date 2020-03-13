@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './_components/alert.component';
+import { AccountComponent } from './account/account.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
@@ -41,6 +42,7 @@ import { UploadModule } from './upload/upload.module';
         LoginComponent,
         RegisterComponent,
         AlertComponent,
+        AccountComponent,
         
     ],
     
