@@ -20,19 +20,16 @@ export class AccountComponent implements OnInit {
         private userService: UserService,
         private alertService: AlertService
     ) {
-        // redirect to home if already logged in
-        if (this.authenticationService.currentUserValue) {
-            this.router.navigate(['/']);
-        }
+        
     }
 
     ngOnInit() {
         this.accountForm = this.formBuilder.group({
-            firstName: ['', Validators.required],
-            lastName: ['', Validators.required],
-            username: ['', Validators.required],
-            email: ['', Validators.required],
-            password: ['', [Validators.required, Validators.minLength(6)]]
+            firstName: ['John', Validators.required],
+            lastName: ['Doe', Validators.required],
+            username: ['jdoe', Validators.required],
+            email: ['temp@uregina.ca', Validators.required],
+            password: ['password', [Validators.required, Validators.minLength(6)]]
         });
     }
 
