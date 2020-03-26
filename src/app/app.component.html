@@ -1,12 +1,12 @@
 <!-- nav -->
 <nav class="navbar navbar-expand navbar-light bg-light">
   <div class="navbar-nav">
-    <h2>Photogea</h2>
-      <a class="nav-item nav-link" routerLink="/">Home</a>
-      <a class="nav-item nav-link" routerLink="/upload">Upload</a>
-      <a class="nav-item nav-link" routerLink="/file-manage">File Manage</a>
-      <a class="nav-item nav-link" routerLink="/account">Account Management</a>
-      <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    <h2>Photagea</h2>
+      <a class="nav-item nav-link" routerLink="/" *ngIf="authService.isAuthenticated">Home</a>
+      <a class="nav-item nav-link" routerLink="/upload" *ngIf="authService.isAuthenticated">Upload</a>
+      <a class="nav-item nav-link" routerLink="/file-manage" *ngIf="authService.isAuthenticated">File Manage</a>
+      <a class="nav-item nav-link" routerLink="/account" *ngIf="authService.isAuthenticated">Account Management</a>
+      <a class="nav-item nav-link" (click)="logout()" *ngIf="authService.isAuthenticated">Logout</a>
   </div>
 </nav>
 

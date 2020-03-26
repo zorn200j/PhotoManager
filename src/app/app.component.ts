@@ -4,7 +4,7 @@ import { FileElement } from './_models/element';
 import { Observable } from 'rxjs';
 import { FileService } from './_services/file.service';
 
-import { AuthenticationService } from './_services/authentication.service';
+import { AuthService } from './_services/auth.service';
 import { User } from './_models/user';
 
 import './_content/app.less';
@@ -20,14 +20,14 @@ export class AppComponent {
 
     constructor(
         private router: Router,
-        private authenticationService: AuthenticationService,
+        public authService: AuthService,
         public fileService: FileService
     ) {
-        this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+        
     }
 
     logout() {
-        this.authenticationService.logout();
+        this.authService.logout();
         this.router.navigate(['/login']);
     }
 

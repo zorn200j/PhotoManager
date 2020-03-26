@@ -1,25 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { first } from 'rxjs/operators';
+import { AuthService } from '../_services/auth.service';
+import { Router } from '@angular/router';
 
-import { User } from '../_models/user';
-import { AuthenticationService } from '../_services/authentication.service';
-import { UserService } from '../_services/user.service';
-
-@Component({ templateUrl: 'home.component.html' })
+@Component({
+    selector: 'app-members',
+    templateUrl: './home.component.html'
+})
 export class HomeComponent implements OnInit {
-    currentUser: User;
-    users = [];
-
-    constructor(
-        private authenticationService: AuthenticationService,
-        private userService: UserService
-    ) {
-        this.currentUser = this.authenticationService.currentUserValue;
-    }
+    accountData: any;
+    constructor(private authService: AuthService, private router: Router) { }
 
     ngOnInit() {
-        
+        this.authService.getAccount().subscribe(
+            (res: any) => {
+                this.accountData = res;
+            }, (err: any) => {
+                this.router.navigateByUrl('/login');
+            }
+        );
     }
-
 
 }

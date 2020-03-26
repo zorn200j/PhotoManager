@@ -5,7 +5,7 @@ import { first } from 'rxjs/operators';
 
 import { AlertService } from '../_services/alert.service';
 import { UserService } from '../_services/user.service';
-import { AuthenticationService } from '../_services/authentication.service';
+import { AuthService } from '../_services/auth.service';
 
 @Component({ templateUrl: 'account.component.html' })
 export class AccountComponent implements OnInit {
@@ -16,7 +16,7 @@ export class AccountComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private router: Router,
-        private authenticationService: AuthenticationService,
+        private authenticationService: AuthService,
         private userService: UserService,
         private alertService: AlertService
     ) {

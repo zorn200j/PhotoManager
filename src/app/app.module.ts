@@ -7,8 +7,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { fakeBackendProvider } from './_helpers/fake-backend';
 
 import { appRoutingModule } from './app-routing.module';
-import { JwtInterceptor } from './_helpers/jwt.interceptor';
-import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -23,6 +21,11 @@ import { FileService } from './_services/file.service';
 import { FileManageModule } from './file-manage/file-manage.module';
 import { UploadModule } from './upload/upload.module';
 
+import { AuthService } from './_services/auth.service';
+import { AuthInterceptorService } from './_services/auth-interceptor.service';
+import { CanActivateViaAuthGuard } from './_helpers/auth.guard';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
     imports: [
@@ -34,7 +37,8 @@ import { UploadModule } from './upload/upload.module';
         FileManageModule,
         FlexLayoutModule, 
         MatCardModule,
-        UploadModule
+        UploadModule,
+     
     ],
     declarations: [
         AppComponent,
@@ -47,11 +51,14 @@ import { UploadModule } from './upload/upload.module';
     ],
     
     providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+        AuthService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptorService,
+            multi: true
+        },
 
-        // provider used to create fake backend
-        fakeBackendProvider,
+        CanActivateViaAuthGuard,
         FileService
     ],
     bootstrap: [AppComponent]
