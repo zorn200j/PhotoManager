@@ -9,12 +9,12 @@ import { AccountComponent } from './account/account.component';
 import { CanActivateViaAuthGuard } from './_helpers/auth.guard';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [CanActivateViaAuthGuard] },
+    { path: '', component: HomeComponent,  },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'upload', component: UploadComponent, canActivate: [CanActivateViaAuthGuard] },
-    { path: 'file-manage', component: FileManageComponent, canActivate: [CanActivateViaAuthGuard] },
-    { path: 'account', component: AccountComponent, canActivate: [CanActivateViaAuthGuard] },
+    { path: 'upload', component: UploadComponent,  },
+    { path: 'file-manage', component: FileManageComponent,  },
+    { path: 'account', component: AccountComponent,  },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
